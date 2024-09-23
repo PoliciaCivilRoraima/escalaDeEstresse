@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escala de Estresse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .question-container {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .result-container {
+            display: none;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <h1 class="display-6">Escala de Estresse</h1>
+        </div>
+
+        <!-- Instruções -->
+        <div class="card shadow-sm p-4" id="instructions">
+            <h5>Instruções</h5>
+            <p>Leia cuidadosamente cada uma das perguntas e responda considerando o que você sentiu apenas nos últimos três meses. 
+                Assinale o número apropriado 0, 1, 2 ou 3.  
+                A pontuação indicará o quanto ela se aplicou a você.</p>
+                <h5>AVISO: Este teste não é um diagnóstico. Para fins de diagnóstico, procure um médico ou um profissional de saúde mental qualificado. <BR>
+                    Seus resultados serão anônimos.</h5>
+            
+        </div>
+
+        <!-- Question 1 -->
+        <div class="card shadow-sm p-4 question-container active" id="question1">
+            <div class="mb-3">
+                <h5>1. Eu me sinto frequentemente estressado.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q1-0" name="q1" value="0" required> 
+                    <label class="form-check-label" for="q1-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q1-1" name="q1" value="1"> 
+                    <label class="form-check-label" for="q1-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q1-2" name="q1" value="2"> 
+                    <label class="form-check-label" for="q1-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q1-3" name="q1" value="3"> 
+                    <label class="form-check-label" for="q1-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>2. Eu me sinto frequentemente aborrecido quando algo sai do meu controle.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q2-0" name="q2" value="0" required> 
+                    <label class="form-check-label" for="q2-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q2-1" name="q2" value="1"> 
+                    <label class="form-check-label" for="q2-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q2-2" name="q2" value="2"> 
+                    <label class="form-check-label" for="q2-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q2-3" name="q2" value="3"> 
+                    <label class="form-check-label" for="q2-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-primary" onclick="next(1)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="card shadow-sm p-4 question-container" id="question2">
+            <div class="mb-3">
+                <h5>3. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q3-0" name="q3" value="0" required>
+                    <label class="form-check-label" for="q3-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q3-1" name="q3" value="1">
+                    <label class="form-check-label" for="q3-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q3-2" name="q3" value="2">
+                    <label class="form-check-label" for="q3-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q3-3" name="q3" value="3">
+                    <label class="form-check-label" for="q3-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>4. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q4-0" name="q4" value="0" required>
+                    <label class="form-check-label" for="q4-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q4-1" name="q4" value="1">
+                    <label class="form-check-label" for="q4-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q4-2" name="q4" value="2">
+                    <label class="form-check-label" for="q4-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q4-3" name="q4" value="3">
+                    <label class="form-check-label" for="q4-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(1)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(2)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="card shadow-sm p-4 question-container" id="question3">
+            <div class="mb-3">
+                <h5>5. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q5-0" name="q5" value="0" required>
+                    <label class="form-check-label" for="q5-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q5-1" name="q5" value="1">
+                    <label class="form-check-label" for="q5-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q5-2" name="q5" value="2">
+                    <label class="form-check-label" for="q5-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q5-3" name="q5" value="3">
+                    <label class="form-check-label" for="q5-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>6. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q6-0" name="q6" value="0" required>
+                    <label class="form-check-label" for="q6-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q6-1" name="q6" value="1">
+                    <label class="form-check-label" for="q6-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q6-2" name="q6" value="2">
+                    <label class="form-check-label" for="q6-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q6-3" name="q6" value="3">
+                    <label class="form-check-label" for="q6-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(2)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(3)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="card shadow-sm p-4 question-container" id="question4">
+            <div class="mb-3">
+                <h5>7. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q7-0" name="q7" value="0" required>
+                    <label class="form-check-label" for="q7-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q7-1" name="q7" value="1">
+                    <label class="form-check-label" for="q7-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q7-2" name="q7" value="2">
+                    <label class="form-check-label" for="q7-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q7-3" name="q7" value="3">
+                    <label class="form-check-label" for="q7-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>8. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q8-0" name="q8" value="0" required>
+                    <label class="form-check-label" for="q8-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q8-1" name="q8" value="1">
+                    <label class="form-check-label" for="q8-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q8-2" name="q8" value="2">
+                    <label class="form-check-label" for="q8-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q8-3" name="q8" value="3">
+                    <label class="form-check-label" for="q8-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(3)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(4)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="card shadow-sm p-4 question-container" id="question5">
+            <div class="mb-3">
+                <h5>9. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q9-0" name="q9" value="0" required>
+                    <label class="form-check-label" for="q9-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q9-1" name="q9" value="1">
+                    <label class="form-check-label" for="q9-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q9-2" name="q9" value="2">
+                    <label class="form-check-label" for="q9-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q9-3" name="q9" value="3">
+                    <label class="form-check-label" for="q9-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>10. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q10-0" name="q10" value="0" required>
+                    <label class="form-check-label" for="q10-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q10-1" name="q10" value="1">
+                    <label class="form-check-label" for="q10-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q10-2" name="q10" value="2">
+                    <label class="form-check-label" for="q10-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q10-3" name="q10" value="3">
+                    <label class="form-check-label" for="q10-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(4)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(5)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="card shadow-sm p-4 question-container" id="question6">
+            <div class="mb-3">
+                <h5>11. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q11-0" name="q11" value="0" required>
+                    <label class="form-check-label" for="q11-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q11-1" name="q11" value="1">
+                    <label class="form-check-label" for="q11-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q11-2" name="q11" value="2">
+                    <label class="form-check-label" for="q11-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q11-3" name="q11" value="3">
+                    <label class="form-check-label" for="q11-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>12. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q12-0" name="q12" value="0" required>
+                    <label class="form-check-label" for="q12-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q12-1" name="q12" value="1">
+                    <label class="form-check-label" for="q12-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q12-2" name="q12" value="2">
+                    <label class="form-check-label" for="q12-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q12-3" name="q12" value="3">
+                    <label class="form-check-label" for="q12-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(5)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(6)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="card shadow-sm p-4 question-container" id="question7">
+            <div class="mb-3">
+                <h5>13. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q13-0" name="q13" value="0" required>
+                    <label class="form-check-label" for="q13-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q13-1" name="q13" value="1">
+                    <label class="form-check-label" for="q13-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q13-2" name="q13" value="2">
+                    <label class="form-check-label" for="q13-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q13-3" name="q13" value="3">
+                    <label class="form-check-label" for="q13-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>14. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q14-0" name="q14" value="0" required>
+                    <label class="form-check-label" for="q14-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q14-1" name="q14" value="1">
+                    <label class="form-check-label" for="q14-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q14-2" name="q14" value="2">
+                    <label class="form-check-label" for="q14-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q14-3" name="q14" value="3">
+                    <label class="form-check-label" for="q14-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(6)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(7)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="card shadow-sm p-4 question-container" id="question8">
+            <div class="mb-3">
+                <h5>15. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q15-0" name="q15" value="0" required>
+                    <label class="form-check-label" for="q15-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q15-1" name="q15" value="1">
+                    <label class="form-check-label" for="q15-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q15-2" name="q15" value="2">
+                    <label class="form-check-label" for="q15-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q15-3" name="q15" value="3">
+                    <label class="form-check-label" for="q15-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>16. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q16-0" name="q16" value="0" required>
+                    <label class="form-check-label" for="q16-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q16-1" name="q16" value="1">
+                    <label class="form-check-label" for="q16-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q16-2" name="q16" value="2">
+                    <label class="form-check-label" for="q16-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q16-3" name="q16" value="3">
+                    <label class="form-check-label" for="q16-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(7)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(8)">Próximo</button>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="card shadow-sm p-4 question-container" id="question9">
+            <div class="mb-3">
+                <h5>17. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q17-0" name="q17" value="0" required>
+                    <label class="form-check-label" for="q17-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q17-1" name="q17" value="1">
+                    <label class="form-check-label" for="q17-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q17-2" name="q17" value="2">
+                    <label class="form-check-label" for="q17-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q17-3" name="q17" value="3">
+                    <label class="form-check-label" for="q17-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>18. Eu acho difícil relaxar.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q18-0" name="q18" value="0" required>
+                    <label class="form-check-label" for="q18-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q18-1" name="q18" value="1">
+                    <label class="form-check-label" for="q18-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q18-2" name="q18" value="2">
+                    <label class="form-check-label" for="q18-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q18-3" name="q18" value="3">
+                    <label class="form-check-label" for="q18-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(8)">Anterior</button>
+                <button class="btn btn-primary" onclick="next(9)">Próximo</button>
+            </div>
+        </div>
+
+
+        <!-- Última tela com o botão para ver o resultado -->
+        <div class="card shadow-sm p-4 question-container" id="question10">
+            <div class="mb-3">
+                <h5>19. Quando me sinto estressado, consigo encontrar formas saudáveis de liberar a tensão acumulada.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q19-0" name="q19" value="0" required>
+                    <label class="form-check-label" for="q19-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q19-1" name="q19" value="1">
+                    <label class="form-check-label" for="q19-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q19-2" name="q19" value="2">
+                    <label class="form-check-label" for="q19-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q19-3" name="q19" value="3">
+                    <label class="form-check-label" for="q19-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <h5>20. Não busco ajuda profissional para mim que percebo alguma alteração física ou emocional.</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q20-0" name="q20" value="0" required>
+                    <label class="form-check-label" for="q20-0">0 - Não se aplicou</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q20-1" name="q20" value="1">
+                    <label class="form-check-label" for="q20-1">1 - Aplicou-se um pouco</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q20-2" name="q20" value="2">
+                    <label class="form-check-label" for="q20-2">2 - Aplicou-se consideravelmente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="q20-3" name="q20" value="3">
+                    <label class="form-check-label" for="q20-3">3 - Aplicou-se muito</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary" onclick="previous(9)">Anterior</button>
+                <button class="btn btn-success" onclick="calculateResult()">Ver Resultado</button>
+            </div>
+        </div>
+
+        <!-- Tela de Resultado -->
+        <div class="result-container text-center" id="resultContainer">
+            <h1>Resultado</h1>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function next(questionNumber) {
+            document.getElementById('question' + questionNumber).classList.remove('active');
+            document.getElementById('question' + (questionNumber + 1)).classList.add('active');
+            document.getElementById('instructions').style.display = 'none';
+        }
+    
+        function previous(questionNumber) {
+            document.getElementById('question' + (questionNumber + 1)).classList.remove('active');
+            document.getElementById('question' + questionNumber).classList.add('active');
+            if (questionNumber == 1) {
+                document.getElementById('instructions').style.display = 'block';
+            }
+        }
+    
+        function calculateResult() {
+            let total = 0;
+            let allAnswered = true;
+    
+            // Loop through each question and add the value
+            for (let i = 1; i <= 20; i++) {
+                const radios = document.querySelector(`input[name="q${i}"]:checked`);
+    
+                if (radios) {
+                    total += parseInt(radios.value);
+                } else {
+                    allAnswered = false;
+                    break;
+                }
+            }
+    
+            if (!allAnswered) {
+                alert('Por favor, responda todas as perguntas.');
+                return;
+            }
+    
+            let message = "";
+            if (total <= 15) {
+                message = "Nenhum ou leve estresse. Você está lidando bem com as pressões.";
+            } else if (total <= 27) {
+                message = "Alerta: nível de estresse mais elevado. Lembre-se de cuidar de si mesmo.";
+            } else if (total <= 39) {
+                message = "Moderado: sinais claros de estresse. Fique atento e cuide de você.";
+            } else {
+                message = "Importante: muito estresse. Busque relaxamento e apoio.";
+            }
+    
+            document.getElementById('result').innerHTML = `Sua pontuação é: ${total}. ${message}`;
+            document.querySelector('.active').classList.remove('active');
+            document.getElementById('resultContainer').style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
