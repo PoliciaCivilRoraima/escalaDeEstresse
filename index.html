@@ -20,17 +20,40 @@
             font-weight: bold;
             margin-top: 20px;
         }
+
+        .btn-dourado {
+            background-color: darkgoldenrod;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-dourado:hover {
+            background-color: goldenrod;
+        }
+
+        .form-check-input:checked {
+            background-color: darkgoldenrod;
+            border: 2px solid goldenrod;
+        }
+
+        
+
+        
+
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-white">
 
-    <div class="text-center mb-4">
-        <img src="PCGOV.png" alt="Logo" class="img-fluid" style="max-width: 200px;">
+    <div class="text-center mb-2">
+        <img src="PCGOV.png" alt="Logo" class="img-fluid" style="max-width: 300px;">
     </div>
+    
 
-    <div class="container py-5">
-        <div class="text-center mb-4">
-            <h1 class="display-6">Escala de Estresse</h1>
+    <div class="container" >
+        <div class="text-center mb-2" id="cabecalho">
+            <h1 class="display-6">Teste de Escala de Estresse</h1>
         </div>
 
         <!-- Instruções -->
@@ -41,6 +64,7 @@
                 A pontuação indicará o quanto ela se aplicou a você.</p>
                 <h5>AVISO: Este teste não é um diagnóstico. Para fins de diagnóstico, procure um médico ou um profissional de saúde mental qualificado. <BR>
                     Seus resultados serão anônimos.</h5>
+            <p><i>Teste elaborado por: EPC Marina Ferreira - Núcleo de Saúde e Assistência Psicossocial (NSAP)</i></p>
             
         </div>
 
@@ -87,7 +111,7 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <button class="btn btn-primary" onclick="next(1)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(1)">Próximo</button>
             </div>
         </div>
 
@@ -135,14 +159,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(1)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(2)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(2)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 3 -->
         <div class="card shadow-sm p-4 question-container" id="question3">
             <div class="mb-3">
-                <h5>5. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>5. Eu me sinto constantemente cansado.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q5-0" name="q5" value="0" required>
                     <label class="form-check-label" for="q5-0">0 - Não se aplicou</label>
@@ -162,7 +186,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>6. Eu acho difícil relaxar.</h5>
+                <h5>6. Eu estou reagindo de forma exagerada diante das situações.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q6-0" name="q6" value="0" required>
                     <label class="form-check-label" for="q6-0">0 - Não se aplicou</label>
@@ -183,14 +207,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(2)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(3)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(3)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 4 -->
         <div class="card shadow-sm p-4 question-container" id="question4">
             <div class="mb-3">
-                <h5>7. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>7. Eu procuro incluir atividade de lazer ou algum hobbie na minha rotina.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q7-0" name="q7" value="0" required>
                     <label class="form-check-label" for="q7-0">0 - Não se aplicou</label>
@@ -210,7 +234,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>8. Eu acho difícil relaxar.</h5>
+                <h5>8.	Sinto minha respiração acelerada mesmo sem ter feito nenhum esforço físico.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q8-0" name="q8" value="0" required>
                     <label class="form-check-label" for="q8-0">0 - Não se aplicou</label>
@@ -231,14 +255,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(3)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(4)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(4)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 5 -->
         <div class="card shadow-sm p-4 question-container" id="question5">
             <div class="mb-3">
-                <h5>9. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>9. Não consigo descansar, pois estou frequentemente pensando nas minhas obrigações.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q9-0" name="q9" value="0" required>
                     <label class="form-check-label" for="q9-0">0 - Não se aplicou</label>
@@ -258,7 +282,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>10. Eu acho difícil relaxar.</h5>
+                <h5>10.	Consigo me desconectar do trabalho depois do expediente.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q10-0" name="q10" value="0" required>
                     <label class="form-check-label" for="q10-0">0 - Não se aplicou</label>
@@ -279,14 +303,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(4)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(5)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(5)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 6 -->
         <div class="card shadow-sm p-4 question-container" id="question6">
             <div class="mb-3">
-                <h5>11. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>11.	Constantemente sinto dores musculares devido às preocupações do dia a dia.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q11-0" name="q11" value="0" required>
                     <label class="form-check-label" for="q11-0">0 - Não se aplicou</label>
@@ -306,7 +330,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>12. Eu acho difícil relaxar.</h5>
+                <h5>12.	Estou me sentindo muito irritado e impaciente.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q12-0" name="q12" value="0" required>
                     <label class="form-check-label" for="q12-0">0 - Não se aplicou</label>
@@ -327,14 +351,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(5)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(6)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(6)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 7 -->
         <div class="card shadow-sm p-4 question-container" id="question7">
             <div class="mb-3">
-                <h5>13. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>13.	Tenho tido dificuldade para dormir.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q13-0" name="q13" value="0" required>
                     <label class="form-check-label" for="q13-0">0 - Não se aplicou</label>
@@ -354,7 +378,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>14. Eu acho difícil relaxar.</h5>
+                <h5>14.	Quando acordo, não me sinto relaxado.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q14-0" name="q14" value="0" required>
                     <label class="form-check-label" for="q14-0">0 - Não se aplicou</label>
@@ -375,14 +399,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(6)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(7)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(7)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 8 -->
         <div class="card shadow-sm p-4 question-container" id="question8">
             <div class="mb-3">
-                <h5>15. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>15.	Tenho sentindo muita dor de cabeça.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q15-0" name="q15" value="0" required>
                     <label class="form-check-label" for="q15-0">0 - Não se aplicou</label>
@@ -402,7 +426,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>16. Eu acho difícil relaxar.</h5>
+                <h5>16.	Sinto meu coração acelerado mesmo em momento de descanso.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q16-0" name="q16" value="0" required>
                     <label class="form-check-label" for="q16-0">0 - Não se aplicou</label>
@@ -423,14 +447,14 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(7)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(8)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(8)">Próximo</button>
             </div>
         </div>
 
         <!-- Question 9 -->
         <div class="card shadow-sm p-4 question-container" id="question9">
             <div class="mb-3">
-                <h5>17. Eu reajo de forma exagerada quando discordam de mim.</h5>
+                <h5>17.	Estou frequentemente em estado de alerta, pensando que algo de ruim poderá acontecer a qualquer momento.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q17-0" name="q17" value="0" required>
                     <label class="form-check-label" for="q17-0">0 - Não se aplicou</label>
@@ -450,7 +474,7 @@
             </div>
 
             <div class="mb-3">
-                <h5>18. Eu acho difícil relaxar.</h5>
+                <h5>18. Sinto que não consigo me concentrar nas atividades do dia a dia.</h5>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" id="q18-0" name="q18" value="0" required>
                     <label class="form-check-label" for="q18-0">0 - Não se aplicou</label>
@@ -471,7 +495,7 @@
 
             <div class="d-flex justify-content-between">
                 <button class="btn btn-secondary" onclick="previous(8)">Anterior</button>
-                <button class="btn btn-primary" onclick="next(9)">Próximo</button>
+                <button class="btn btn-dourado" onclick="next(9)">Próximo</button>
             </div>
         </div>
 
@@ -567,18 +591,24 @@
                 return;
             }
     
-            let message = "";
+            let message1 = "";
+            let message2 = "";
             if (total <= 15) {
-                message = "Nenhum ou leve estresse. Você está lidando bem com as pressões.";
+                message1 = "Nenhum ou leve estresse";
+                message2 = "Parabéns! Você tem conseguido lidar com as pressões cotidianas. Fique atento a qualquer alteração de humor.";
             } else if (total <= 27) {
-                message = "Alerta: nível de estresse mais elevado. Lembre-se de cuidar de si mesmo.";
+                message1 = "Alerta";
+                message2 = "O estresse é reação natural do organismo diante das situações de ameaça ou perigo. Lembre-se de que cuidar de você mesmo é essencial, principalmente quando se sentir estressado. Reserve um tempo para respirar fundo, alongar o corpo e fazer algum exercício. Cuide-se .";
             } else if (total <= 39) {
-                message = "Moderado: sinais claros de estresse. Fique atento e cuide de você.";
+                message1 = "Sinais claros de estresse";
+                message2 = "É importante estar atento aos sinais de estresse que você esteja passando, por exemplo, tensão muscular, irritabilidade, coração acelerado. Podem ser alguns dos sinais de que seu corpo está pedindo uma pausa e cuidado. Não hesite em cuidar de si. Procure apoio, faça exercício e tire um tempo para relaxar. Você merece se sentir bem.";
             } else {
-                message = "Importante: muito estresse. Busque relaxamento e apoio.";
+                message1 = "Estresse altíssimo";
+                message2 = "Atenção! Você demonstra estar extremamente estressado. É importante que você busque meios para encontrar relaxamento físico e emocional. Lembre-se que você não precisa enfrentar tudo sozinho. Compartilhe os seus sentimentos de angústia com a família e com os amigos. Se você está enfrentando sentimentos de estresse e ansiedade, também procure ajuda profissional. Você é importante e merece momentos de tranquilidade. Procure desacelerar e busca o bem-estar que você merece.";
             }
     
-            document.getElementById('result').innerHTML = `Sua pontuação é: ${total}. ${message}`;
+            document.getElementById('cabecalho').style.display = 'none';
+            document.getElementById('result').innerHTML = `<h1>${message1}</h1><br>${message2}`;
             document.querySelector('.active').classList.remove('active');
             document.getElementById('resultContainer').style.display = 'block';
         }
