@@ -668,11 +668,25 @@
     }
 
     function resetQuiz() {
+        // Esconde o resultado e mostra o cabeçalho
         document.getElementById('resultContainer').style.display = 'none';
         document.getElementById('cabecalho').style.display = 'block';
+
+        // Remove a classe 'active' de todas as perguntas e ativa a primeira
+        const questions = document.querySelectorAll('.question-container');
+        questions.forEach(question => question.classList.remove('active'));
         document.getElementById('question1').classList.add('active');
-        updateProgress(1); // Reseta a barra de progresso
+
+        // Limpa todas as marcações de radio
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.checked = false;
+        });
+
+        // Reseta a barra de progresso
+        updateProgress(1);
     }
+
 </script>
 
 <!-- Barra de Progresso -->
