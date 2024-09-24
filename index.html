@@ -109,14 +109,6 @@
                     <label class="form-check-label" for="q2-3">3 - Aplicou-se muito</label>
                 </div>
             </div>
-
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-dourado" onclick="next(1)">Próximo</button>
-            </div>
-        </div>
-
-        <!-- Question 2 -->
-        <div class="card shadow-sm p-4 question-container" id="question2">
             <div class="mb-3">
                 <h5>3. Eu reajo de forma exagerada quando discordam de mim.</h5>
                 <div class="form-check">
@@ -158,13 +150,13 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(1)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(2)">Próximo</button>
+                <button class="btn btn-dourado" onclick="validateAndNext(1)">Próximo</button>
             </div>
         </div>
 
-        <!-- Question 3 -->
-        <div class="card shadow-sm p-4 question-container" id="question3">
+        <!-- Question 2 -->
+        <div class="card shadow-sm p-4 question-container" id="question2">
+            
             <div class="mb-3">
                 <h5>5. Eu me sinto constantemente cansado.</h5>
                 <div class="form-check">
@@ -205,14 +197,6 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(2)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(3)">Próximo</button>
-            </div>
-        </div>
-
-        <!-- Question 4 -->
-        <div class="card shadow-sm p-4 question-container" id="question4">
             <div class="mb-3">
                 <h5>7. Eu não procuro incluir atividade de lazer ou algum hobbie na minha rotina.</h5>
                 <div class="form-check">
@@ -254,13 +238,14 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(3)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(4)">Próximo</button>
+                <button class="btn btn-secondary" onclick="previous(1)">Anterior</button>
+                <button class="btn btn-dourado" onclick="validateAndNext(2)">Próximo</button>
             </div>
         </div>
 
-        <!-- Question 5 -->
-        <div class="card shadow-sm p-4 question-container" id="question5">
+        <!-- Question 3 -->
+        <div class="card shadow-sm p-4 question-container" id="question3">
+            
             <div class="mb-3">
                 <h5>9. Não consigo descansar, pois estou frequentemente pensando nas minhas obrigações.</h5>
                 <div class="form-check">
@@ -301,14 +286,6 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(4)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(5)">Próximo</button>
-            </div>
-        </div>
-
-        <!-- Question 6 -->
-        <div class="card shadow-sm p-4 question-container" id="question6">
             <div class="mb-3">
                 <h5>11.	Constantemente sinto dores musculares devido às preocupações do dia a dia.</h5>
                 <div class="form-check">
@@ -349,14 +326,16 @@
                 </div>
             </div>
 
+
             <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(5)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(6)">Próximo</button>
+                <button class="btn btn-secondary" onclick="previous(2)">Anterior</button>
+                <button class="btn btn-dourado" onclick="validateAndNext(3)">Próximo</button>
             </div>
         </div>
 
-        <!-- Question 7 -->
-        <div class="card shadow-sm p-4 question-container" id="question7">
+        <!-- Question 4 -->
+        <div class="card shadow-sm p-4 question-container" id="question4">
+            
             <div class="mb-3">
                 <h5>13.	Tenho tido dificuldade para dormir.</h5>
                 <div class="form-check">
@@ -396,15 +375,7 @@
                     <label class="form-check-label" for="q14-3">3 - Aplicou-se muito</label>
                 </div>
             </div>
-
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(6)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(7)">Próximo</button>
-            </div>
-        </div>
-
-        <!-- Question 8 -->
-        <div class="card shadow-sm p-4 question-container" id="question8">
+            
             <div class="mb-3">
                 <h5>15.	Tenho sentindo muita dor de cabeça.</h5>
                 <div class="form-check">
@@ -445,14 +416,16 @@
                 </div>
             </div>
 
+
             <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(7)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(8)">Próximo</button>
+                <button class="btn btn-secondary" onclick="previous(3)">Anterior</button>
+                <button class="btn btn-dourado" onclick="validateAndNext(4)">Próximo</button>
             </div>
         </div>
 
-        <!-- Question 9 -->
-        <div class="card shadow-sm p-4 question-container" id="question9">
+        <!-- Question 5 -->
+        <div class="card shadow-sm p-4 question-container" id="question5">
+            
             <div class="mb-3">
                 <h5>17.	Estou frequentemente em estado de alerta, pensando que algo de ruim poderá acontecer a qualquer momento.</h5>
                 <div class="form-check">
@@ -493,15 +466,6 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(8)">Anterior</button>
-                <button class="btn btn-dourado" onclick="next(9)">Próximo</button>
-            </div>
-        </div>
-
-
-        <!-- Última tela com o botão para ver o resultado -->
-        <div class="card shadow-sm p-4 question-container" id="question10">
             <div class="mb-3">
                 <h5>19. Quando me sinto estressado, não consigo encontrar formas saudáveis de liberar a tensão acumulada.</h5>
                 <div class="form-check">
@@ -543,76 +507,201 @@
             </div>
 
             <div class="d-flex justify-content-between">
-                <button class="btn btn-secondary" onclick="previous(9)">Anterior</button>
+                <button class="btn btn-secondary" onclick="previous(4)">Anterior</button>
                 <button class="btn btn-success" onclick="calculateResult()">Ver Resultado</button>
             </div>
         </div>
 
-        <!-- Tela de Resultado -->
-        <div class="result-container text-center" id="resultContainer">
-            <h1>Resultado</h1>
-            <div class="result" id="result"></div>
+            
         </div>
-    </div>
+            
+            
 
-    <script>
-        function next(questionNumber) {
-            document.getElementById('question' + questionNumber).classList.remove('active');
-            document.getElementById('question' + (questionNumber + 1)).classList.add('active');
-            document.getElementById('instructions').style.display = 'none';
+       <!-- Tela de Resultado -->
+<div class="result-container text-center" id="resultContainer" style="display: none;">
+    <h1>Resultado</h1>
+    <div class="result" id="result"></div>
+    <button onclick="resetQuiz()" class="btn-restart">Refazer o questionário</button>
+</div>
+
+<!-- Estilo CSS -->
+<style>
+    .result-container {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 600px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .result h1 {
+        color: #2c3e50;
+        font-size: 2rem;
+    }
+
+    .result {
+        font-size: 1.1rem;
+        color: #34495e;
+        margin-top: 10px;
+    }
+
+    .btn-restart {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .btn-restart:hover {
+        background-color: #2980b9;
+    }
+
+    .progress-bar {
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .progress {
+        height: 100%;
+        width: 0;
+        background-color: #3498db;
+        border-radius: 5px;
+        transition: width 0.3s ease;
+    }
+</style>
+
+<!-- Script de Funções -->
+<script>
+    function next(questionNumber) {
+        document.getElementById('question' + questionNumber).classList.remove('active');
+        document.getElementById('question' + (questionNumber + 1)).classList.add('active');
+        document.getElementById('instructions').style.display = 'none';
+        updateProgress(questionNumber + 1); // Atualiza a barra de progresso
+    }
+
+    function previous(questionNumber) {
+        document.getElementById('question' + (questionNumber + 1)).classList.remove('active');
+        document.getElementById('question' + questionNumber).classList.add('active');
+        if (questionNumber == 1) {
+            document.getElementById('instructions').style.display = 'block';
         }
-    
-        function previous(questionNumber) {
-            document.getElementById('question' + (questionNumber + 1)).classList.remove('active');
-            document.getElementById('question' + questionNumber).classList.add('active');
-            if (questionNumber == 1) {
-                document.getElementById('instructions').style.display = 'block';
+        updateProgress(questionNumber); // Atualiza a barra de progresso
+    }
+
+    function validateAndNext(currentQuestion) {
+        const totalQuestions = 4; // Total de perguntas por página
+        let allAnswered = true;
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const questionName = `q${(currentQuestion - 1) * totalQuestions + i}`; // Nome das perguntas
+            const radios = document.getElementsByName(questionName);
+            
+            // Verifica se alguma opção não foi selecionada
+            if (![...radios].some(radio => radio.checked)) {
+                allAnswered = false;
+                break; // Se uma pergunta não foi respondida, saia do loop
             }
         }
-    
-        function calculateResult() {
-            let total = 0;
-            let allAnswered = true;
-    
-            // Loop through each question and add the value
-            for (let i = 1; i <= 20; i++) {
-                const radios = document.querySelector(`input[name="q${i}"]:checked`);
-    
-                if (radios) {
-                    total += parseInt(radios.value);
-                } else {
-                    allAnswered = false;
-                    break;
-                }
-            }
-    
-            if (!allAnswered) {
-                alert('Por favor, responda todas as perguntas.');
-                return;
-            }
-    
-            let message1 = "";
-            let message2 = "";
-            if (total <= 15) {
-                message1 = "Nenhum ou leve estresse";
-                message2 = "Parabéns! Você tem conseguido lidar com as pressões cotidianas. Fique atento a qualquer alteração de humor.";
-            } else if (total <= 27) {
-                message1 = "Alerta";
-                message2 = "O estresse é reação natural do organismo diante das situações de ameaça ou perigo. Lembre-se de que cuidar de você mesmo é essencial, principalmente quando se sentir estressado. Reserve um tempo para respirar fundo, alongar o corpo e fazer algum exercício. Cuide-se .";
-            } else if (total <= 39) {
-                message1 = "Sinais claros de estresse";
-                message2 = "É importante estar atento aos sinais de estresse que você esteja passando, por exemplo, tensão muscular, irritabilidade, coração acelerado. Podem ser alguns dos sinais de que seu corpo está pedindo uma pausa e cuidado. Não hesite em cuidar de si. Procure apoio, faça exercício e tire um tempo para relaxar. Você merece se sentir bem.";
+
+        if (allAnswered) {
+            next(currentQuestion); // Chama a função que avança para a próxima página
+        } else {
+            alert('Por favor, responda todas as perguntas antes de continuar.'); // Mensagem de aviso
+        }
+    }
+
+    function calculateResult() {
+        let total = 0;
+        let allAnswered = true;
+
+        // Loop through each question and add the value
+        for (let i = 1; i <= 20; i++) {
+            const radios = document.querySelector(`input[name="q${i}"]:checked`);
+
+            if (radios) {
+                total += parseInt(radios.value);
             } else {
-                message1 = "Estresse altíssimo";
-                message2 = "Atenção! Você demonstra estar extremamente estressado. É importante que você busque meios para encontrar relaxamento físico e emocional. Lembre-se que você não precisa enfrentar tudo sozinho. Compartilhe os seus sentimentos de angústia com a família e com os amigos. Se você está enfrentando sentimentos de estresse e ansiedade, também procure ajuda profissional. Você é importante e merece momentos de tranquilidade. Procure desacelerar e busca o bem-estar que você merece.";
+                allAnswered = false;
+                break;
             }
-    
-            document.getElementById('cabecalho').style.display = 'none';
-            document.getElementById('result').innerHTML = `<h1>${message1}</h1><br>${message2}`;
-            document.querySelector('.active').classList.remove('active');
-            document.getElementById('resultContainer').style.display = 'block';
         }
-    </script>
-    
-</body>
-</html>
+
+        if (!allAnswered) {
+            alert('Por favor, responda todas as perguntas.');
+            return;
+        }
+
+        let message1 = "";
+        let message2 = "";
+        if (total <= 15) {
+            message1 = "Nenhum ou leve estresse";
+            message2 = "Parabéns! Você tem conseguido lidar com as pressões cotidianas. Fique atento a qualquer alteração de humor.";
+        } else if (total <= 27) {
+            message1 = "Alerta";
+            message2 = "Lembre-se de que cuidar de você mesmo é essencial. Reserve um tempo para relaxar.";
+        } else if (total <= 39) {
+            message1 = "Sinais claros de estresse";
+            message2 = "Cuide-se. Procure apoio, faça exercício e tire um tempo para relaxar.";
+        } else {
+            message1 = "Estresse altíssimo";
+            message2 = "Atenção! Você demonstra estar extremamente estressado. Procure desacelerar e busque bem-estar.";
+        }
+
+        document.getElementById('cabecalho').style.display = 'none';
+        document.getElementById('result').innerHTML = `<h1>${message1}</h1><br>${message2}`;
+        document.querySelector('.active').classList.remove('active');
+        document.getElementById('resultContainer').style.display = 'block';
+    }
+
+    function updateProgress(questionNumber) {
+        const progressBar = document.querySelector('.progress');
+        const progress = (questionNumber / 5) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function resetQuiz() {
+        document.getElementById('resultContainer').style.display = 'none';
+        document.getElementById('cabecalho').style.display = 'block';
+        document.getElementById('question1').classList.add('active');
+        updateProgress(1); // Reseta a barra de progresso
+    }
+</script>
+
+<!-- Barra de Progresso -->
+<div class="progress-bar">
+    <div class="progress"></div>
+</div>
+<!-- Div de rodapé no cantinho -->
+<div class="footer-credits">
+    Desenvolvido por Ascom/PCRR
+</div>
+
+<div>
+    <br>
+    <br>
+    <br>
+</div>
+
+<!-- Estilos CSS -->
+<style>
+    .footer-credits {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+        color: #555;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+</style>
